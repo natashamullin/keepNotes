@@ -4,7 +4,7 @@ const util = require("util");
 const fs = require("fs");
 
 // package that generates unique ids
-const uuid = require("uuid");
+const uuid = require("uuid/v1");
 
 const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
@@ -19,7 +19,6 @@ class Store {
     }
     getNotes() {
         return this.read().then(notes => {
-
             let parsedNotes;
 
             //if no note send an empty []
@@ -28,6 +27,7 @@ class Store {
             } catch (err) {
                 parsedNotes = [];
             }
+            return parsedNotes;
         });
     }
 
@@ -47,4 +47,4 @@ class Store {
     }
 }
 
-module.export = new Store();
+module.exports = new Store();

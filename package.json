@@ -12,9 +12,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
-    "uuid": "^8.3.2"
+    "uuid": "^3.4.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/natashamullin/noteTaker.git"
